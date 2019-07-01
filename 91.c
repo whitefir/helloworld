@@ -4,7 +4,7 @@
 
 struct code{
 	char name[20];
-	int type;//1为目录2为文件 
+	int type;//1脦陋脛驴脗录2脦陋脦脛录镁 
 	struct code* bro;
 	struct code* son;
 };
@@ -105,5 +105,6 @@ struct code find(char* getname,struct code getroot)
     {dest=find(getname,po.son);}
 	else{return NULL;}
 	
+	system("pause");
 	return dest;
 }
