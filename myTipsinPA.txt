@@ -41,6 +41,9 @@ awk `print $0 " "FNR` a.txt >> a_out.txt
 
 find ./ -name "*.wav" | xargs -i cp {} dst_dir/
 
+alias qw='ls'
+alias qa='cd ..'
+
 =================
 
 # python3
