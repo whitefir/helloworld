@@ -1,0 +1,62 @@
+# linux bash
+循环里都先cd 一下绝对路径
+
+若文件/文件夹存在再删除，若不存在先创建
+if [ ! -d "./myfolder" ]; then
+    mkdir ./myfolder
+fi
+
+for i in {1..10}
+do
+{
+...
+} &
+done
+wait
+
+ls -lR | grep "^-" | wc -l
+ls -F ./dir | grep /$ #只列出目录下的子目录
+
+if [ $id -eq 2 -o $id -eq 5 ]; then
+    echo "$id is skipped"
+    continue
+fi
+
+nohup bash do.sh >> nohup.out 2 > &1
+
+iconv -f gbk -t utf8 1_gbk.txt -o 1_utf8.txt
+
+文件命名.只用来隔离扩展名，其余用_。when_who_what。时间戳是个好东西
+
+for i in `find . -type f`
+do
+{
+    echo "$i"
+}
+done
+
+sed -n '1,11p' a.txt
+
+awk `print $0 " "FNR` a.txt >> a_out.txt
+
+find ./ -name "*.wav" | xargs -i cp {} dst_dir/
+
+=================
+
+# python3
+import sys
+a = int (sys.argv[1])
+b = os.system('ls')
+
+方法一：system调用
+#仅仅在一个子终端运行系统命令，而不能获取命令执行后的返回信息
+import os
+os.system('ls')
+
+方法二：popen()函数
+import os
+os.popen('ls').readlines() #这个返回值是一个list
+
+方法三：使用模块 subprocess
+import subprocess
+subprocess.call('ls') #可以直接call()调用
