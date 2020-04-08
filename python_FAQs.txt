@@ -359,7 +359,9 @@ sorted_d1 = sorted(d1, key=operator.itemgetter('age'))
 
 48.请合并下面两个字典 a = {"A":1,"B":2},b = {"C":3,"D":4}
 
-a.update(b)
+c={**a, **b}
+
+#a.update(b)
 
 ？49.如何使用生成式的方式生成一个字典，写一段功能代码。
 
